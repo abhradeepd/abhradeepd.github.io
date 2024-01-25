@@ -56,9 +56,7 @@
                 <p></p>
 
                 <div class="buttons pt-3">
-                    <a href="mailto:abhradeep.das@gwmail.gwu.edu?subject=Hire Inquiry">
-                        <button class="btn btn-primary rounded">HIRE ME</button>
-                    </a>
+                    <button id="hireMeButton" class="btn btn-primary rounded">HIRE ME</button>
                     <a href="https://drive.google.com/file/d/1tbrlki3ZvOoKZaXg5imWHe8x_TBh8B3K/view?usp=sharing" target="_blank" class="btn btn-dark rounded">DOWNLOAD CV</a>
                 </div>      
 
@@ -389,5 +387,16 @@
     <!-- steller js -->
     <script src="assets/js/steller.js"></script>
 
+    <script>
+        document.getElementById('hireMeButton').addEventListener('click', function() {
+            var email = 'your-email@example.com'; // Replace with your email
+            var subject = encodeURIComponent('Hire Inquiry');
+            var emailBody = encodeURIComponent('Hello,\n\nI would like to discuss...'); // Predefined email body
+            var gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${emailBody}`;
+    
+            window.open(gmailUrl, '_blank');
+        });
+    </script>
+    
 </body>
 </html>
