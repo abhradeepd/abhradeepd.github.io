@@ -141,40 +141,48 @@
     );
   }
 
-  /* ---------- Scroll reveal: one consistent medium-speed entrance ----------
-     Every element plays the same 0.6s eased animation when it enters, regardless of
-     how fast the person scrolls, and resets when it leaves so it replays both ways. */
+  /* ---------- Scroll reveal: hysteresis engine ----------
+     Two observers instead of one. The old single observer used a -18% bottom
+     margin, which silently turned the bottom fifth of the screen into a dead
+     zone: elements un-revealed there while still visible. Now:
+     · ENTER fires once ~10% up from the bottom edge — early enough that
+       nothing sits blank in view
+     · EXIT fires only once the element is fully off-screen (+90px buffer) —
+       so nothing disappears while you can still see it
+     Between those lines, state holds. Replays in both directions intact. */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduceMotion) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target;
-          const num = el.querySelector(".metric-num");
-          if (entry.isIntersecting) {
-            const siblings = el.parentElement
-              ? [...el.parentElement.children].filter((c) => c.classList.contains("reveal"))
-              : [el];
-            const idx = Math.max(0, siblings.indexOf(el));
-            el.style.setProperty("--stagger", `${Math.min(idx, 5) * 0.07}s`);
-            el.classList.add("in");
-            if (num) countUp(num);
-          } else {
-            el.classList.remove("in");
-            if (num) {
-              if (num._raf) cancelAnimationFrame(num._raf);
-              num._raf = null;
-              num.textContent = "0" + (num.dataset.suffix || "");
-            }
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -18% 0px" }
+    const show = (el) => {
+      const siblings = el.parentElement
+        ? [...el.parentElement.children].filter((c) => c.classList.contains("reveal"))
+        : [el];
+      const idx = Math.max(0, siblings.indexOf(el));
+      el.style.setProperty("--stagger", `${Math.min(idx, 5) * 0.07}s`);
+      el.classList.add("in");
+      const num = el.querySelector(".metric-num");
+      if (num) countUp(num);
+    };
+    const hide = (el) => {
+      el.classList.remove("in");
+      const num = el.querySelector(".metric-num");
+      if (num) {
+        if (num._raf) cancelAnimationFrame(num._raf);
+        num._raf = null;
+        num.textContent = "0" + (num.dataset.suffix || "");
+      }
+    };
+    const enterIO = new IntersectionObserver(
+      (entries) => entries.forEach((en) => { if (en.isIntersecting) show(en.target); }),
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
     );
-    // begin observing only after the loader lifts — otherwise elements sitting
-    // near the fold (like the metric board) play their entrance behind the
-    // terminal and appear "already done" on the way down
-    setTimeout(() => revealEls.forEach((el) => io.observe(el)), 1150);
+    const exitIO = new IntersectionObserver(
+      (entries) => entries.forEach((en) => {
+        if (!en.isIntersecting && en.target.classList.contains("in")) hide(en.target);
+      }),
+      { threshold: 0, rootMargin: "90px 0px 90px 0px" }
+    );
+    // begin observing after the loader lifts so near-fold entrances play in sight
+    setTimeout(() => revealEls.forEach((el) => { enterIO.observe(el); exitIO.observe(el); }), 1150);
   } else {
     revealEls.forEach((el) => {
       el.classList.add("in");

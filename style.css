@@ -890,8 +890,8 @@ h1 { font-weight: 700; }
   opacity: var(--go, 0);
   transition: opacity 0.3s ease;
   background: radial-gradient(96px 96px at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(190, 210, 255, 0.10) 40%,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(190, 210, 255, 0.05) 40%,
     transparent 70%);
   mix-blend-mode: screen;
 }
@@ -1105,3 +1105,50 @@ body::before {
     radial-gradient(680px 680px at 62% 86%, rgba(214, 69, 110, 0.20), transparent 62%);
 }
 body::after { content: none; animation: none; }
+
+
+/* readability: the specular travels through the glass UNDER the content —
+   isolation makes each pane its own stacking context, and z-index:-1 slots the
+   light between the glass background and everything printed on it (works for
+   card children AND bare button text) */
+.gi, .btn { isolation: isolate; }
+.gi::after, .btn::after { z-index: -1; }
+
+
+/* ================================================================
+   READABILITY UNDER LIGHT — two physical corrections
+   1) The source radiates less: specular luminance roughly halved and
+     the beam narrowed (a dimmer lamp is still a lamp; inverse-square
+     falloff, Fresnel edges and dispersion all unchanged)
+   2) Photochromic response: like reactive sunglass glass, the pane
+     DARKENS slightly when light is on it — hover now deepens the
+     tint instead of lightening it, so text contrast rises exactly
+     when the specular arrives instead of collapsing
+   ================================================================ */
+
+.gi::after {
+  background: radial-gradient(110px 110px at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.070) 0%,
+    rgba(148, 87, 235, 0.034) 18%,
+    rgba(88, 86, 214, 0.031) 26%,
+    rgba(64, 156, 255, 0.028) 34%,
+    rgba(52, 199, 89, 0.025) 42%,
+    rgba(255, 214, 10, 0.022) 50%,
+    rgba(255, 149, 0, 0.022) 58%,
+    rgba(255, 69, 58, 0.019) 66%,
+    transparent 76%);
+}
+.btn::after {
+  background: radial-gradient(90px 90px at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(190, 210, 255, 0.06) 40%,
+    transparent 70%);
+}
+
+/* photochromic hover: panes deepen under the light */
+.tl-card:hover, .proj-card:hover, .about-card:hover, .metric:hover {
+  background: rgba(13, 16, 33, 0.66);
+}
+.contact-card:hover, .skills-rows:hover {
+  background: rgba(14, 17, 34, 0.58);
+}
