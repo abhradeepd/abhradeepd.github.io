@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhradeep Das — Analytics Engineer</title>
+  <meta name="description" content="Analytics Engineer building tested, documented data models in dbt and SQL, delivered as governed Power BI and Tableau dashboards. Previously at The World Bank and GWU." />
+  <meta property="og:title" content="Abhradeep Das — Analytics Engineer" />
+  <meta property="og:description" content="dbt · SQL · Snowflake · BigQuery · Power BI. Turning multi-source data into one trusted source of truth." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0F14'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23E67E22' font-family='monospace' font-weight='bold'>ad</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- cursor glow layer -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-terminal">
+      <div class="term-bar">
+        <span class="term-dot red"></span><span class="term-dot yellow"></span><span class="term-dot green"></span>
+        <span class="term-title">abhradeep@portfolio: ~</span>
+      </div>
+      <div class="term-body">
+        <p class="loader-line" style="--i:0"><span class="term-user">abhradeep@portfolio</span><span class="term-path">:~$</span> dbt build --select portfolio</p>
+        <p class="loader-line" style="--i:1">Running 4 models, 12 tests ...</p>
+        <p class="loader-line" style="--i:2">Completed successfully &nbsp;<span class="ok">PASS=16 WARN=0 ERROR=0</span></p>
+        <p class="loader-line dim" style="--i:3">-- Those who abandon their metrics are worse than scum.</p>
+        <p class="loader-line" style="--i:4"><span class="term-user">abhradeep@portfolio</span><span class="term-path">:~$</span> <span class="term-cursor"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#top" aria-label="Home">abhradeep<span class="accent">.das</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-small" href="assets/Abhradeep_Das_AE.pdf" download="Abhradeep_Das_AE.pdf">Resume ↓</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow rise" style="--d:0">Analytics Engineer</p>
+          <h1 class="rise" style="--d:1">I build data models<br />people can <span class="accent-grad">trust</span>.</h1>
+          <p class="hero-sub rise" style="--d:2">
+            Tested, documented models in <strong>dbt</strong> and <strong>SQL</strong> on Snowflake and BigQuery —
+            delivered as governed, self-service <strong>Power BI</strong> and <strong>Tableau</strong> dashboards.
+            Previously at <strong>The World Bank</strong> and <strong>GWU</strong>.
+          </p>
+          <div class="hero-cta rise" style="--d:3">
+            <a class="btn btn-primary" href="#projects">See my work</a>
+            <a class="btn btn-ghost" href="mailto:abhradeep.das@gwu.edu">Get in touch</a>
+          </div>
+          <div class="hero-socials rise" style="--d:4">
+            <a href="https://github.com/abhradeepd" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/abhradeep-das-ds09ji3/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Signature: animated pipeline -->
+        <div class="hero-pipeline rise" style="--d:2" aria-hidden="true">
+          <div class="hero-eclipse">
+            <span class="ring-orbit">
+              <span class="bead-arm arm-ember"><span class="ring-bead"></span></span>
+              <span class="bead-arm arm-rose" style="--rot:120deg"><span class="ring-bead bead-rose"></span></span>
+              <span class="bead-arm arm-lav" style="--rot:240deg"><span class="ring-bead bead-lav"></span></span>
+            </span>
+          </div>
+          <div class="pipe-node" style="--n:0">
+            <span class="pipe-icon">{ }</span>
+            <span class="pipe-label">raw sources</span>
+            <span class="pipe-sub">CSV · API · events</span>
+          </div>
+          <div class="pipe-link" style="--n:0"><span class="pulse"></span></div>
+          <div class="pipe-node" style="--n:1">
+            <span class="pipe-icon">⇥</span>
+            <span class="pipe-label">ingest</span>
+            <span class="pipe-sub">dlt · Airflow</span>
+          </div>
+          <div class="pipe-link" style="--n:1"><span class="pulse"></span></div>
+          <div class="pipe-node pipe-node-wide" style="--n:2">
+            <span class="pipe-icon">▤</span>
+            <span class="pipe-label">warehouse</span>
+            <span class="pipe-sub">Snowflake · BigQuery · DuckDB</span>
+          </div>
+          <div class="pipe-link" style="--n:2"><span class="pulse"></span></div>
+          <div class="pipe-node" style="--n:3">
+            <span class="pipe-icon">⚙</span>
+            <span class="pipe-label">model + test</span>
+            <span class="pipe-sub">dbt · <span class="tests-badge" id="testsBadge">tests ✓</span></span>
+          </div>
+          <div class="pipe-link" style="--n:3"><span class="pulse"></span></div>
+          <div class="pipe-node" style="--n:4">
+            <span class="pipe-icon">◫</span>
+            <span class="pipe-label">serve</span>
+            <span class="pipe-sub">Power BI · Tableau</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- metrics: each number is tied to its role and story -->
+      <div class="metrics-block">
+        <p class="eyebrow reveal">Impact, measured</p>
+        <div class="hero-metrics">
+          <div class="metric reveal">
+            <span class="metric-context mono">Saayam for All · data quality</span>
+            <span class="metric-num" data-count="18" data-suffix="%">0%</span>
+            <span class="metric-label">lift in donor data reliability after shipping an automated dbt test framework with SLA tracking</span>
+            <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="sg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e67e22"/><stop offset="0.5" stop-color="#d6456e"/><stop offset="1" stop-color="#9d7cd8"/></linearGradient></defs>
+              <path pathLength="100" d="M2 26 L18 24 L34 25 L50 19 L66 20 L82 12 L98 10 L118 4" fill="none" stroke="url(#sg1)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric reveal">
+            <span class="metric-context mono">Saayam for All · reporting</span>
+            <span class="metric-num" data-count="25" data-suffix="%">0%</span>
+            <span class="metric-label">less manual reporting across 5 regions once one governed star schema replaced ad-hoc pulls</span>
+            <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="sg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e67e22"/><stop offset="0.5" stop-color="#d6456e"/><stop offset="1" stop-color="#9d7cd8"/></linearGradient></defs>
+              <path pathLength="100" d="M2 8 L18 12 L34 10 L50 16 L66 15 L82 21 L98 24 L118 27" fill="none" stroke="url(#sg2)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric reveal">
+            <span class="metric-context mono">The World Bank · NLP at scale</span>
+            <span class="metric-num" data-count="500" data-suffix="+">0</span>
+            <span class="metric-label">policy documents auto-classified by development theme with an in-house Llama 70B system I built</span>
+            <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="sg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e67e22"/><stop offset="0.5" stop-color="#d6456e"/><stop offset="1" stop-color="#9d7cd8"/></linearGradient></defs>
+              <path pathLength="100" d="M2 28 L18 27 L34 24 L50 25 L66 17 L82 14 L98 8 L118 3" fill="none" stroke="url(#sg3)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric reveal">
+            <span class="metric-context mono">The World Bank · climate model</span>
+            <span class="metric-num" data-count="182" data-suffix="">0</span>
+            <span class="metric-label">countries ranked by the climate-governance prioritization model behind a 14% allocation-efficiency gain</span>
+            <svg class="spark" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="sg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e67e22"/><stop offset="0.5" stop-color="#d6456e"/><stop offset="1" stop-color="#9d7cd8"/></linearGradient></defs>
+              <path pathLength="100" d="M2 22 L18 25 L34 18 L50 21 L66 13 L82 16 L98 7 L118 5" fill="none" stroke="url(#sg4)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 · About</p>
+        <h2>The <span class="accent-grad">short</span> version</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <img class="about-avatar" src="assets/avatar.png" alt="Abhradeep Das" loading="lazy" width="132" height="132" />
+          <div>
+            <h3>Abhradeep Das</h3>
+            <p class="mono muted">MS Data Science · GWU '25</p>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            I sit at the point where data engineering meets analytics: taking messy, multi-source data and turning it
+            into one tested, documented source of truth that stakeholders actually trust. At <strong>Saayam for All</strong> I own
+            dbt and SQL models on Snowflake end to end — from Airflow-orchestrated ingestion to Power BI semantic models with DAX.
+            At <strong>The World Bank</strong> I built the pipeline and the statistics behind a climate-governance
+            prioritization model spanning 182 countries.
+          </p>
+          <p>
+            Right now I'm deepening the 2026 analytics-engineering stack — dlt, Dagster, MetricFlow, Elementary —
+            through two end-to-end portfolio builds you can watch take shape below.
+          </p>
+          <ul class="about-facts mono">
+            <li><span class="accent">▸</span> Open to Analytics Engineer / BI Engineer / Data Analyst roles</li>
+            <li><span class="accent">▸</span> Anywhere in India · Open to relocating worldwide (work visa required)</li>
+            <li><span class="accent">▸</span> abhradeep.das@gwu.edu</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="section-head reveal">
+        <p class="eyebrow">02 · Experience</p>
+        <h2>Where I've <span class="accent-grad">built</span> things</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">Jun 2025 — Present</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>Analytics Engineer · <span class="accent">Saayam for All</span></h3>
+            <p class="tl-loc mono muted">Remote</p>
+            <p class="tl-body">
+              Donor and volunteer data lived in disconnected sources, so every region reported slightly different numbers.
+              I built the pipeline that fixed that: modular Python, dbt and SQL transformation models on Snowflake,
+              orchestrated with Apache Airflow, feeding a star schema and Power BI semantic models with DAX measures that
+              regional teams now self-serve from. An automated data-quality framework — completeness, consistency and
+              null-check tests plus SLA-tracking scripts — lifted donor data reliability by <strong>18%</strong>, and the
+              governed model cut manual reporting effort by <strong>25% across 5 regions</strong>.
+            </p>
+            <div class="chips"><span>dbt</span><span>Snowflake</span><span>Airflow</span><span>Power BI · DAX</span><span>SQL</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">Jan 2025 — May 2025</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>Data Science Fellow · <span class="accent">The World Bank</span></h3>
+            <p class="tl-loc mono muted">Washington, DC</p>
+            <p class="tl-body">
+              The team needed to know which climate-governance reforms would return the most across 182 countries — but
+              the evidence sat in 10+ web sources and 500+ unread policy documents. I engineered Python-based ELT with
+              Selenium to normalize semi-structured data (JSON, CSV, PDF), built an in-house Llama 70B classification
+              system to tag every document by development theme, and modeled it all on Snowflake. The resulting
+              climate-prioritization model (Factor Analysis, Latent Class Analysis, Item Response Theory) improved
+              investment allocation efficiency by <strong>14%</strong>, and its Tableau dashboard put insights in front of
+              analysts <strong>20% faster</strong>.
+            </p>
+            <div class="chips"><span>Python</span><span>Llama 70B</span><span>Snowflake</span><span>Tableau</span><span>ELT</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">Feb 2024 — May 2024</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>Research Assistant I · <span class="accent">George Washington University</span></h3>
+            <p class="tl-loc mono muted">Washington, DC</p>
+            <p class="tl-body">
+              Financial-risk researchers were manually combing through <strong>~1&nbsp;TB</strong> of 10-K SEC filings.
+              I automated the whole path: an end-to-end pipeline ingesting filings from AWS S3, an ETL workflow in Python
+              (Regex, spaCy) extracting Risk Factor 1A passages into structured, query-ready tables, and a
+              transformer-based text-similarity module flagging anomalous risk-disclosure shifts across companies and
+              quarters — turning a slow manual review into repeatable, scalable analysis.
+            </p>
+            <div class="chips"><span>AWS S3</span><span>Python</span><span>spaCy</span><span>NLP</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">Aug 2022 — Dec 2022</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>Research Assistant I · <span class="accent">Calcutta University</span></h3>
+            <p class="tl-loc mono muted">Kolkata, India</p>
+            <p class="tl-body">
+              Phishing and fraud messages were slipping past manual review. Working with a cross-functional team on Git
+              and JIRA, I architected the scraping and extraction pipeline (Python, BeautifulSoup, Regex) and helped
+              design a Docker-containerized ML system on AWS classifying <strong>10,000+ messages a month</strong> with
+              XGBoost, SVC and Sentence-BERT embeddings. The model reached an <strong>85% F1 score</strong> and
+              contributed to a <strong>35% reduction</strong> in fraud cases.
+            </p>
+            <div class="chips"><span>Docker</span><span>AWS</span><span>XGBoost</span><span>Sentence-BERT</span></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="eyebrow edu-eyebrow reveal">Education</p>
+      <div class="timeline timeline-edu">
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">May 2025</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>MS, Data Science · <span class="accent">The George Washington University</span></h3>
+            <p class="tl-degree mono">Washington, DC</p>
+          </div>
+        </article>
+        <article class="tl-item reveal">
+          <div class="tl-meta mono"><span class="tl-date">Jul 2023</span></div>
+          <div class="tl-node"><span class="tl-dot"></span></div>
+          <div class="tl-card">
+            <h3>B.Tech, Computer Science &amp; Engineering · <span class="accent">Techno India University</span></h3>
+            <p class="tl-degree mono">Kolkata, India</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <p class="eyebrow">03 · Projects</p>
+        <h2>Built &amp; <span class="accent-grad">building</span></h2>
+        <p class="section-sub">Two end-to-end analytics-engineering builds are in active development — the repos go live here as each milestone lands.</p>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-status building"><span class="dot"></span>In progress</span>
+            <span class="mono muted">01</span>
+          </div>
+          <h3>E-Commerce Analytics Warehouse</h3>
+          <p>One governed source of truth for a marketplace's revenue, delivery-time and repeat-purchase metrics — from raw Olist CSVs to a Power BI semantic model with row-level security. Ingestion with dlt, a tested dbt star schema with SCD Type&nbsp;2 and incremental models on DuckDB, Elementary observability, Dagster orchestration and CI on GitHub Actions.</p>
+          <div class="chips"><span>dlt</span><span>dbt</span><span>DuckDB</span><span>SCD 2</span><span>Elementary</span><span>Dagster</span><span>CI/CD</span><span>Power BI RLS</span></div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-status building"><span class="dot"></span>In progress</span>
+            <span class="mono muted">02</span>
+          </div>
+          <h3>Event Analytics &amp; Governed Metrics Layer</h3>
+          <p>A funnel and cohort analytics layer on GA4's public clickstream sample in BigQuery: flattening nested event arrays, sessionization, cost-aware partition pruning, metrics defined once in a MetricFlow semantic layer, Elementary anomaly monitoring, and dynamic RLS in Power BI — plus an LLM anomaly narrative constrained to real figures.</p>
+          <div class="chips"><span>BigQuery</span><span>dbt</span><span>MetricFlow</span><span>GA4</span><span>Elementary</span><span>Power BI RLS</span><span>Groq · Llama</span></div>
+        </article>
+
+        <a class="proj-card reveal" href="https://github.com/abhradeepd/NLP-Final-Project-Group-5" target="_blank" rel="noopener">
+          <div class="proj-top">
+            <span class="proj-status done"><span class="dot"></span>Completed</span>
+            <span class="mono muted">03 ↗</span>
+          </div>
+          <h3>Quora Question Pair Similarity</h3>
+          <p>Duplicate-question detection at 93% accuracy with an ensemble of BERT embeddings, XGBoost and TF-IDF; contrastive learning with Siamese networks cut false positives by 40%. Deployed on AWS Lambda with ONNX optimizations for low-latency, scalable inference.</p>
+          <div class="chips"><span>BERT</span><span>XGBoost</span><span>Siamese nets</span><span>AWS Lambda</span><span>ONNX</span></div>
+          <span class="proj-repo mono">View repo on GitHub ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <p class="eyebrow">04 · Skills</p>
+        <h2>The <span class="accent-grad">toolbox</span></h2>
+      </div>
+      <div class="skills-rows">
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">01</span>Languages &amp; databases</h4>
+          <div class="chips"><span>Python</span><span>SQL (MySQL, PostgreSQL)</span><span>R</span><span>NoSQL (MongoDB)</span></div>
+        </div>
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">02</span>Transformation &amp; modeling</h4>
+          <div class="chips"><span>dbt (core, tests &amp; docs)</span><span>Jinja</span><span>MetricFlow</span><span>Star / Snowflake schema</span><span>SCD Type 2</span><span>Elementary</span></div>
+        </div>
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">03</span>Orchestration &amp; DevOps</h4>
+          <div class="chips"><span>Airflow</span><span>Dagster</span><span>dlt</span><span>dbt scheduler</span><span>Git · GitHub Actions (CI/CD)</span><span>Docker</span><span>Kubernetes</span><span>JIRA</span></div>
+        </div>
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">04</span>Warehouses &amp; cloud</h4>
+          <div class="chips"><span>Snowflake</span><span>BigQuery</span><span>DuckDB</span><span>AWS</span><span>GCP</span></div>
+        </div>
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">05</span>BI &amp; reporting</h4>
+          <div class="chips"><span>Power BI (DAX, Power Query)</span><span>Tableau</span><span>Looker Studio</span><span>MS Excel</span></div>
+        </div>
+        <div class="skill-row reveal">
+          <h4 class="mono"><span class="row-idx">06</span>Analytics &amp; ML</h4>
+          <div class="chips"><span>Pandas · NumPy</span><span>Matplotlib · Seaborn · Plotly</span><span>spaCy · Selenium · BeautifulSoup</span><span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>Hugging Face</span><span>Llama 70B</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact-card reveal">
+        <p class="eyebrow">05 · Contact</p>
+        <h2>Let's build a <span class="accent-grad">source of truth</span>.</h2>
+        <p class="section-sub">I'm currently looking for Analytics Engineer, BI Engineer and Data Analyst roles — anywhere in India, and open to relocating worldwide with work-visa sponsorship. If my work fits what your team needs, my inbox is open.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:abhradeep.das@gwu.edu">abhradeep.das@gwu.edu</a>
+          <a class="btn btn-ghost" href="assets/Abhradeep_Das_AE.pdf" download="Abhradeep_Das_AE.pdf">Download resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/abhradeepd" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/abhradeep-das-ds09ji3/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="mono muted">© <span id="year"></span> Abhradeep Das</p>
+    <p class="mono muted footer-motto">// Those who abandon their metrics are worse than scum.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
