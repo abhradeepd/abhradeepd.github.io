@@ -1152,3 +1152,68 @@ body::after { content: none; animation: none; }
 .contact-card:hover, .skills-rows:hover {
   background: rgba(14, 17, 34, 0.58);
 }
+
+
+/* ================================================================
+   MATERIAL SYSTEM v2 — graded optics
+   One physical model, three glass grades, each property derived
+   from the surface's job. The photochromic idea generalizes:
+   content ABSORBS light, controls TRANSMIT and EMIT it.
+
+   Grade A · SMOKED PANE (reading surfaces)
+     deep absorption · heavy frost (etched, diffuse) · calm edges ·
+     photochromic: darkens under light to protect text contrast
+   Grade B · CLEAR PANE (controls: pipeline nodes, buttons, chips)
+     shallow absorption · light frost (polished, sharper refraction,
+     stronger color transmission) · bright Fresnel edges ·
+     photochromic reversed: brightens under light — invitation to act
+   Grade C · STRUCTURAL GLASS (nav, toolbox frame, terminal chrome)
+     the load-bearing middle: medium absorption, medium frost,
+     quiet edges — present, never performing
+   ================================================================ */
+
+/* — Grade A: smoked — */
+.tl-card, .proj-card, .about-card, .metric, .contact-card, .loader-terminal {
+  background: rgba(18, 21, 41, 0.54);
+  -webkit-backdrop-filter: blur(26px) saturate(1.35);
+  backdrop-filter: blur(26px) saturate(1.35);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+}
+.tl-card:hover, .proj-card:hover, .about-card:hover, .metric:hover,
+.contact-card:hover {
+  background: rgba(12, 15, 31, 0.66); /* darkens under light */
+}
+
+/* — Grade B: clear — */
+.pipe-node, .btn, .chips span, .term-bar {
+  background: rgba(255, 255, 255, 0.085);
+  -webkit-backdrop-filter: blur(12px) saturate(1.85);
+  backdrop-filter: blur(12px) saturate(1.85);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.30);
+}
+.pipe-node:hover, .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14); /* brightens under light */
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.btn-primary {
+  background: rgba(230, 126, 34, 0.88);
+  border-color: rgba(230, 126, 34, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 26px rgba(230, 126, 34, 0.3);
+}
+
+/* — Grade C: structural — */
+.nav.scrolled, .skills-rows {
+  background: rgba(19, 22, 43, 0.48);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  backdrop-filter: blur(20px) saturate(1.5);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.skills-rows:hover { background: rgba(15, 18, 36, 0.56); }

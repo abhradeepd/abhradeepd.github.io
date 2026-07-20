@@ -173,7 +173,7 @@
     };
     const enterIO = new IntersectionObserver(
       (entries) => entries.forEach((en) => { if (en.isIntersecting) show(en.target); }),
-      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.02, rootMargin: "0px 0px -4% 0px" }
     );
     const exitIO = new IntersectionObserver(
       (entries) => entries.forEach((en) => {
