@@ -1217,3 +1217,231 @@ body::after { content: none; animation: none; }
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .skills-rows:hover { background: rgba(15, 18, 36, 0.56); }
+
+
+/* ================================================================
+   MATERIAL SYSTEM v3 — relit frost + Apple-style depth
+   1) Grade A rework: "smoked" becomes FROSTED — a lighter, more
+      translucent base (the heavy blur stays its defining trait, so
+      it remains clearly distinct from clear-pane B). Photochromic
+      darkening now starts from this lighter base, landing roughly
+      where the old resting state was — contrast without gloom.
+   2) Depth pass, all grades: convex curvature (a light-to-shade
+      vertical wash across each pane), a bright top rim, an inner
+      bottom shade, and split shadows — tight contact + deep soft
+      ambient — that grow when the pane lifts. Same key light,
+      top-down, everywhere.
+   ================================================================ */
+
+:root {
+  --curveA: linear-gradient(180deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.012) 32%, rgba(0,0,0,0.10) 100%);
+  --curveB: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 45%, rgba(0,0,0,0.08) 100%);
+  --curveC: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 40%, rgba(0,0,0,0.08) 100%);
+}
+
+/* — Grade A: frosted, relit, convex — */
+.tl-card, .proj-card, .about-card, .metric, .contact-card, .loader-terminal {
+  background-color: rgba(27, 31, 56, 0.42);
+  background-image: var(--curveA);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -14px 26px -16px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    0 26px 60px -14px rgba(0, 0, 0, 0.55);
+}
+.tl-card:hover, .proj-card:hover, .about-card:hover, .metric:hover,
+.contact-card:hover {
+  background-color: rgba(17, 20, 40, 0.56); /* photochromic, from the lighter base */
+  background-image: var(--curveA);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -14px 26px -16px rgba(0, 0, 0, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.40),
+    0 36px 80px -16px rgba(0, 0, 0, 0.60);
+}
+
+/* — Grade B: clear, convex capsule depth — */
+.pipe-node, .btn {
+  background-color: rgba(255, 255, 255, 0.085);
+  background-image: var(--curveB);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -8px 16px -10px rgba(0, 0, 0, 0.30),
+    0 1px 3px rgba(0, 0, 0, 0.30),
+    0 12px 26px -10px rgba(0, 0, 0, 0.45);
+}
+.pipe-node:hover, .btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  background-image: var(--curveB);
+}
+.btn-primary {
+  background-color: rgba(230, 126, 34, 0.88);
+  background-image: var(--curveB);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.40),
+    inset 0 -8px 16px -10px rgba(0, 0, 0, 0.20),
+    0 2px 5px rgba(0, 0, 0, 0.30),
+    0 12px 28px -8px rgba(230, 126, 34, 0.35);
+}
+.chips span {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* — Grade C: structural, gentle relief — */
+.nav.scrolled, .skills-rows {
+  background-color: rgba(20, 23, 45, 0.44);
+  background-image: var(--curveC);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -10px 22px -14px rgba(0, 0, 0, 0.28),
+    0 2px 6px rgba(0, 0, 0, 0.30),
+    0 18px 44px -12px rgba(0, 0, 0, 0.45);
+}
+.skills-rows:hover {
+  background-color: rgba(15, 18, 37, 0.52);
+  background-image: var(--curveC);
+}
+
+
+/* ================================================================
+   DEPTH & FROST v3
+   1) Apple-style dimensionality on every grade: a top-lit luminance
+      gradient across the pane (convex surface), dual shadows (tight
+      contact + soft ambient), and an inner floor shade — glass with
+      thickness, not stickers
+   2) Grade A rebuilt: SMOKED → FROSTED. Its identity now comes from
+      the heaviest blur, not darkness — lighter at rest, and the
+      photochromic dip lands where the old rest state was, so it
+      deepens under light without ever going murky
+   ================================================================ */
+
+/* — Grade A: frosted pane (lighter, thick, deeply blurred) — */
+.tl-card, .proj-card, .about-card, .metric, .contact-card, .loader-terminal {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.012) 42%, transparent 70%),
+    rgba(31, 35, 60, 0.42);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.32),
+    0 22px 52px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -12px 26px -14px rgba(0, 0, 0, 0.30);
+}
+.tl-card:hover, .proj-card:hover, .about-card:hover, .metric:hover,
+.contact-card:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, transparent 60%),
+    rgba(20, 24, 45, 0.54); /* photochromic dip ≈ the old rest tone */
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.36),
+    0 30px 64px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -12px 26px -14px rgba(0, 0, 0, 0.30);
+}
+
+/* — Grade B: clear pane, now with visible thickness — */
+.pipe-node, .btn, .chips span, .term-bar {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 55%, transparent 80%),
+    rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.28),
+    0 8px 20px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -6px 14px -8px rgba(0, 0, 0, 0.22);
+}
+.pipe-node:hover, .btn-ghost:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+    rgba(255, 255, 255, 0.10);
+}
+.btn-primary {
+  background: linear-gradient(180deg, rgba(255, 210, 160, 0.35) 0%, transparent 45%), rgba(230, 126, 34, 0.88);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 10px 26px rgba(230, 126, 34, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* — Grade C: structural glass (the deepest of the three) — */
+.nav.scrolled, .skills-rows {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 55%),
+    rgba(16, 19, 38, 0.52);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.34),
+    0 18px 42px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -10px 22px -12px rgba(0, 0, 0, 0.28);
+}
+.skills-rows:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 55%),
+    rgba(12, 15, 31, 0.58);
+}
+
+/* — chips join the specular law: small glare, no tilt — */
+.chips span { position: relative; }
+
+
+/* ================================================================
+   GRADE SEPARATION v4 — three glasses you can tell apart at a glance
+   The depth pass homogenized them; this restores identity along the
+   axis you actually SEE — how each treats the light behind it:
+   A · FROSTED  = milky-soft: heaviest blur, muted color transmission,
+                  a faint white diffusion in the pane itself
+   B · CLEAR    = vivid: barely blurred, saturation boosted, the orbs'
+                  color pours straight through; brightest edges
+   C · STRUCTURAL = solid: darkest, most opaque, least see-through —
+                  the tinted load-bearing frame around the panes
+   Same physics, three transmission profiles.
+   ================================================================ */
+
+/* — A: milky frost — */
+.tl-card, .proj-card, .about-card, .metric, .contact-card, .loader-terminal {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0.008) 100%),
+    rgba(40, 44, 70, 0.36);
+  -webkit-backdrop-filter: blur(30px) saturate(1.12);
+  backdrop-filter: blur(30px) saturate(1.12);
+}
+.tl-card:hover, .proj-card:hover, .about-card:hover, .metric:hover,
+.contact-card:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, transparent 60%),
+    rgba(24, 28, 50, 0.50);
+}
+
+/* — B: vivid clear — */
+.pipe-node, .btn, .chips span, .term-bar {
+  -webkit-backdrop-filter: blur(8px) saturate(2.0);
+  backdrop-filter: blur(8px) saturate(2.0);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+/* — C: solid structure — */
+.nav.scrolled, .skills-rows {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+    rgba(12, 15, 31, 0.64);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  backdrop-filter: blur(18px) saturate(1.25);
+  border-color: rgba(255, 255, 255, 0.11);
+}
+
+/* ================================================================
+   PIPELINE POP FIX — entrance by motion only
+   Fading a pane (or its ancestor) to opacity < 1 detaches
+   backdrop-filter into an isolated group: the node renders without
+   the lavender behind it, then snaps to the true refraction the
+   instant opacity hits 1 — the "sudden color" bug. The pipeline now
+   enters and replays with translation only, so its glass samples the
+   orbs from the very first frame and the adaptation is continuous.
+   ================================================================ */
+.hero-pipeline.rise {
+  opacity: 1 !important;
+  animation-name: riseMove;
+}
+@keyframes riseMove { from { transform: translateY(26px); } to { transform: none; } }
+.hero.settled .hero-pipeline.rise { opacity: 1 !important; transform: translateY(26px); }
+.hero.settled.in .hero-pipeline.rise { transform: none; }

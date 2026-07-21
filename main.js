@@ -248,17 +248,18 @@
        ~1.1° contact · ~0.85° toolbox — same feel, one physical law. */
   if (!reduceMotion) {
     const glassEls = document.querySelectorAll(
-      ".tl-card, .proj-card, .about-card, .metric, .pipe-node, .contact-card, .skills-rows, .btn"
+      ".tl-card, .proj-card, .about-card, .metric, .pipe-node, .contact-card, .skills-rows, .btn, .chips span"
     );
     glassEls.forEach((el) => {
       const isBtn = el.classList.contains("btn");
+      const flat = isBtn || el.matches(".chips span"); // glare yes, tilt no
       if (!isBtn) el.classList.add("gi");
       const s = { rx: 0, ry: 0, trx: 0, trY: 0, lift: 0, tlift: 0, raf: null, hover: false };
       const step = () => {
         s.rx += (s.trx - s.rx) * 0.16;
         s.ry += (s.trY - s.ry) * 0.16;
         s.lift += (s.tlift - s.lift) * 0.16;
-        if (!isBtn) {
+        if (!flat) {
           const scale = (1 + 0.012 * s.lift).toFixed(4);
           el.style.transform =
             "perspective(900px) rotateX(" + s.rx.toFixed(2) + "deg) rotateY(" +
@@ -271,7 +272,7 @@
           Math.abs(s.tlift - s.lift) < 0.01;
         if (settled) {
           s.raf = null;
-          if (!s.hover && !isBtn) {
+          if (!s.hover && !flat) {
             el.style.transform = "";
             el.style.transition = "";
           }
@@ -283,7 +284,7 @@
       el.addEventListener("pointerenter", () => {
         s.hover = true;
         s.tlift = 1;
-        if (!isBtn) {
+        if (!flat) {
           el.style.transition =
             "transform 0s, border-color 0.35s ease, background 0.3s ease, box-shadow 0.35s ease";
         }
@@ -296,7 +297,7 @@
         el.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
         el.style.setProperty("--my", (py * 100).toFixed(1) + "%");
         el.style.setProperty("--go", "1");
-        if (isBtn) return;
+        if (flat) return;
         const a = r.width * r.height;
         const maxTilt = Math.min(9.5, Math.max(0.7, (1170 / Math.sqrt(a)) / (1 + a / 900000)));
         s.trx = (0.5 - py) * maxTilt;
