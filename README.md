@@ -23,23 +23,15 @@ Design highlights:
 index.html    → the site (single page)
 style.css     → all styling
 main.js       → loader, reveals, scrollspy, optics engine
-classic.html  → alternate minimal build (classic.css / classic.js)
 assets/       → avatar + resume PDF
-GUIDE.md      → how to edit anything (content, colors, projects, resume)
 ```
 
 ## Running locally
 
 Clone or download, then open `index.html` in a browser. That's it — no install, no server needed.
 
-## Making changes
-
-Everything editable — adding project repo links, updating the resume, changing colors, tuning animations — is documented step-by-step in [`GUIDE.md`](GUIDE.md). Commits to `main` deploy automatically via GitHub Pages.
-
 ## Contact
 
 **abhradeep.das@gwu.edu** · [LinkedIn](https://www.linkedin.com/in/abhradeep-das-ds09ji3/) · [GitHub](https://github.com/abhradeepd)
 
 ---
-
-*Those who abandon their metrics are worse than scum.*
